@@ -1,0 +1,26 @@
+<%- include("header") %>
+<div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+</div>
+
+<div class="box">
+    <% newListItems.forEach(item => { %>
+
+    <form action="/delete" method="POST">
+        <div class="item">
+            <input type="checkbox" onchange="this.form.submit()" name="checkBox" value="<%= item._id %>">
+            <p> <%= item.name %> </p>
+        </div>
+        <!-- Hidden input to differentiate list type -->
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+    </form>
+
+    <%})%>
+    <!-- // add a dynamic value to "value Attr" -->
+    <form class="" action="/" method="POST">
+        <input type="text" name="newItem" placeholder="New Task" autocomplete="off">
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
+    </form>
+</div>
+
+<%- include("footer") %>
