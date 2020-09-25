@@ -45,7 +45,7 @@ const ItemTwo = new Item({
 });
 
 const ItemThree = new Item({
-    name: "Take a shit"
+    name: "Feed dog"
 });
 
 const defaultItems = [ItemOne, ItemTwo, ItemThree];
